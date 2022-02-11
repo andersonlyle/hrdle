@@ -2,10 +2,17 @@ const PORT = 8000
 const axios = require("axios").default
 const express = require("express")
 const cors = require("cors")
+const {response} = require("express");
 require('dotenv').config()
 const app = express()
 
 app.use(cors())
+
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
 app.get('/word', (req, res) => {
     const options = {
@@ -18,11 +25,32 @@ app.get('/word', (req, res) => {
         }
     }
     axios.request(options).then((response) => {
-        console.log(response.data)
+        console.log(response.data[0])
         res.json(response.data[0])
+
     }).catch((error) => {
         console.error(error)
     })
+})
+
+app.get('/wordhr',(req,res) => {
+    const hrWords = [
+        "COACH",
+        "GOALS",
+        "UNION",
+        "EXPAT",
+        "MERIT",
+        "BONUS",
+        "STAFF",
+        "TEAMS"
+    ]
+
+    // hrWords.forEach((word) =>
+    // console.log(word))
+    const wordIndex = getRandomInt(0,6)
+    console.log(hrWords[wordIndex])
+
+    res.json(hrWords[wordIndex])
 })
 
 

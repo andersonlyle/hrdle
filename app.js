@@ -5,14 +5,19 @@ const messageDisplay = document.querySelector('.message-container')
 let wordle
 
 const getWordle = () => {
-    fetch('http://localhost:8000/word')
+    fetch('http://localhost:8000/wordhr')
         .then(response => response.json())
         .then(json => {
+
             wordle = json.toUpperCase()
+            console.log('Word of the Day')
+            console.log(wordle)
         })
         .catch(err => console.log(err))
 }
 getWordle()
+
+
 
 const keys = [
     'Q',
@@ -141,11 +146,11 @@ const checkRow = () => {
     }
 }
 
-const showMessage = (message) => {
+const showMessage = (message, timing= 30000) => {
     const messageElement = document.createElement('p')
     messageElement.textContent = message
     messageDisplay.append(messageElement)
-    setTimeout(() => messageDisplay.removeChild(messageElement), 2000)
+    setTimeout(() => messageDisplay.removeChild(messageElement), timing)
 }
 
 const addColorToKey = (keyLetter, color) => {
@@ -184,4 +189,3 @@ const flipTile = () => {
         }, 500 * index)
     })
 }
-
