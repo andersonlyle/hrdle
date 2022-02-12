@@ -118,7 +118,7 @@ const deleteLetter = () => {
 const checkRow = () => {
     const guess = guessRows[currentRow].join('')
     if (currentTile > 4) {
-        fetch(`https://sheltered-basin-09516.herokuapp.com/?word=${guess}`)
+        fetch(`https://sheltered-basin-09516.herokuapp.com/check/?word=${guess}`)
             .then(response => response.json())
             .then(json => {
                 if (json == 'Entry word not found') {
