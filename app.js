@@ -5,7 +5,7 @@ const messageDisplay = document.querySelector('.message-container')
 let wordle
 
 const getWordle = () => {
-    fetch('http://localhost:8000/wordhr')
+    fetch('https://sheltered-basin-09516.herokuapp.com/wordhr')
         .then(response => response.json())
         .then(json => {
 
@@ -118,7 +118,7 @@ const deleteLetter = () => {
 const checkRow = () => {
     const guess = guessRows[currentRow].join('')
     if (currentTile > 4) {
-        fetch(`http://localhost:8000/check/?word=${guess}`)
+        fetch(`https://sheltered-basin-09516.herokuapp.com/?word=${guess}`)
             .then(response => response.json())
             .then(json => {
                 if (json == 'Entry word not found') {
