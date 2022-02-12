@@ -122,18 +122,18 @@ const checkRow = () => {
             .then(response => response.json())
             .then(json => {
                 if (json == 'Entry word not found') {
-                    showMessage('word not in list')
+                    showMessage('Word not in dictionary - try again!')
                     return
                 } else {
                     flipTile()
                     if (wordle == guess) {
-                        showMessage('Magnificent!')
+                        showMessage('You are a ILRDle Guru!')
                         isGameOver = true
                         return
                     } else {
                         if (currentRow >= 5) {
                             isGameOver = true
-                            showMessage('Game Over')
+                            showMessage('Game Over - try again tomorrow!')
                             return
                         }
                         if (currentRow < 5) {
