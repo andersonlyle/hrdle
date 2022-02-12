@@ -20,33 +20,33 @@ getWordle()
 
 
 const keys = [
-    'Q',
-    'W',
-    'E',
-    'R',
-    'T',
-    'Y',
-    'U',
-    'I',
-    'O',
-    'P',
     'A',
-    'S',
+    'B',
+    'C',
     'D',
+    'E',
     'F',
     'G',
     'H',
+    'I',
     'J',
     'K',
     'L',
-    'ENTER',
-    'Z',
-    'X',
-    'C',
-    'V',
-    'B',
-    'N',
     'M',
+    'N',
+    'O',
+    'P',
+    'Q',
+    'R',
+    'S',
+    'T',
+    'U',
+    'V',
+    'W',
+    'X',
+    'Y',
+    'Z',
+    'ENTER',
     '«',
 ]
 const guessRows = [
@@ -146,7 +146,7 @@ const checkRow = () => {
     }
 }
 
-const showMessage = (message, timing= 30000) => {
+const showMessage = (message, timing = 30000) => {
     const messageElement = document.createElement('p')
     messageElement.textContent = message
     messageDisplay.append(messageElement)
@@ -164,7 +164,7 @@ const flipTile = () => {
     const guess = []
 
     rowTiles.forEach(tile => {
-        guess.push({letter: tile.getAttribute('data'), color: 'grey-overlay'})
+        guess.push({ letter: tile.getAttribute('data'), color: 'grey-overlay' })
     })
 
     guess.forEach((guess, index) => {
