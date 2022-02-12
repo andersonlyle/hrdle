@@ -134,8 +134,8 @@ body {
 
 @media only screen and (max-width: 520px) {
    .key-container {
-    
-    margin: 0 auto;
+    align-items: center;
+  justify-content: center;
   }
   
   .key-container button {
@@ -157,8 +157,17 @@ body {
     margin-left: 30px;
   }
   
-  .tile-container div {
-    display: flex;
+  .tile-container  {
+    width:auto;
   }
-  
+  .tile-container .tile {
+    width: 52px;
+    height: 52px;
+    border: 2px solid lightgrey;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2px;
+  }
 }
