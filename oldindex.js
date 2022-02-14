@@ -2,7 +2,7 @@ const PORT = 8000
 const axios = require("axios").default
 const express = require("express")
 const cors = require("cors")
-const {response} = require("express");
+const { response } = require("express");
 require('dotenv').config()
 const app = express()
 
@@ -18,7 +18,7 @@ app.get('/word', (req, res) => {
     const options = {
         method: 'GET',
         url: 'https://random-words5.p.rapidapi.com/getMultipleRandom',
-        params: {count: '5', wordLength: '5'},
+        params: { count: '5', wordLength: '5' },
         headers: {
             'x-rapidapi-host': 'random-words5.p.rapidapi.com',
             'x-rapidapi-key': process.env.RAPID_API_KEY
@@ -33,7 +33,7 @@ app.get('/word', (req, res) => {
     })
 })
 
-app.get('/wordhr',(req,res) => {
+app.get('/wordhr', (req, res) => {
     const hrWords = [
         "COACH",
         "GOALS",
@@ -47,7 +47,7 @@ app.get('/wordhr',(req,res) => {
 
     // hrWords.forEach((word) =>
     // console.log(word))
-    const wordIndex = getRandomInt(0,6)
+    const wordIndex = getRandomInt(0, 6)
     console.log(hrWords[wordIndex])
 
     res.json(hrWords[wordIndex])
@@ -60,7 +60,7 @@ app.get('/check', (req, res) => {
     const options = {
         method: 'GET',
         url: 'https://twinword-word-graph-dictionary.p.rapidapi.com/association/',
-        params: {entry: word},
+        params: { entry: word },
         headers: {
             'x-rapidapi-host': 'twinword-word-graph-dictionary.p.rapidapi.com',
             'x-rapidapi-key': process.env.RAPID_API_KEY
