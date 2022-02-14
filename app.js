@@ -5,7 +5,7 @@ const messageDisplay = document.querySelector('.message-container')
 let wordle
 
 const getWordle = () => {
-    fetch('https://sheltered-basin-09516.herokuapp.com/wordhr')
+    fetch('/.netlify/functions/wordhr')
         .then(response => response.json())
         .then(json => {
 
@@ -118,7 +118,7 @@ const deleteLetter = () => {
 const checkRow = () => {
     const guess = guessRows[currentRow].join('')
     if (currentTile > 4) {
-        fetch(`https://sheltered-basin-09516.herokuapp.com/check/?word=${guess}`)
+        fetch(`/.netlify/functions/check/?word=${guess}`)
             .then(response => response.json())
             .then(json => {
                 if (json == 'Entry word not found') {

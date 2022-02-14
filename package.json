@@ -6,7 +6,8 @@
   "scripts": {
     "start:backend": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "netlify dev"
   },
   "engines": {
     "node": "16.x"
@@ -19,5 +20,8 @@
     "dotenv": "^14.3.2",
     "express": "^4.17.2",
     "nodemon": "^2.0.15"
+  },
+  "devDependencies": {
+    "netlify-cli": "^9.4.2"
   }
 }
