@@ -29,7 +29,9 @@ exports.handler = async function (event, context) {
 
     // hrWords.forEach((word) =>
     // console.log(word))
-    const wordIndex = getRandomInt(0, 6)
+    // const wordIndex = getRandomInt(0, 6)
+    const d = new Date();
+    let wordIndex = d.getDay();
     todaysWord = hrWords[wordIndex]
     console.log('Todays Word', todaysWord)
     return {
